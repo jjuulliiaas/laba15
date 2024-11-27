@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final FunctionCalculator _calculator = FunctionCalculator();
   final TextEditingController _controller = TextEditingController();
   String _result = '';
+  int _counter = 0;
 
   void _calculate() {
     final input = double.tryParse(_controller.text);
@@ -53,6 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
       });
     }
   }
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -90,11 +98,21 @@ class _MyHomePageState extends State<MyHomePage> {
               _result,
               style: Theme.of(context).textTheme.labelLarge,
             ),
+            SizedBox(height: 16),
+            Text(
+              '$_counter',
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w900,
+                color: Colors.pink
+              ),
+            ),
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.mouse),
       ),
