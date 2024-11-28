@@ -77,7 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             TextField(
               controller: _controller,
-              keyboardType: TextInputType.number,
+              keyboardType: const TextInputType.numberWithOptions(signed: true, decimal: true),
+              inputFormatters: [],
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(45.0),

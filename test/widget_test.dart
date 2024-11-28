@@ -10,7 +10,7 @@ void main() {
       // y = 16 − x + x^3
       expect(calculator.calculate(0), 16);
       expect(calculator.calculate(1), 16);
-      expect(calculator.calculate(-1), 18);
+      expect(calculator.calculate(-1), 16);
       expect(calculator.calculate(3), 40);
     });
   });
